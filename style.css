@@ -32,12 +32,47 @@ h1 {
 }
 #About{
   font-size: 50%;
-  width: 50%;
-  display: inline-block;
-  text-align: left;
+  width: 80%;
+  text-align: center;
   padding-left: 10%;
 }
 ul{
+  display: inline-block;
   list-style-type: circle;
+  padding: 5px;
   font-family: "Roboto";
+  text-align: left;
+}
+#Titles{
+  display: flex;
+  text-align: center;
+}
+#Titles h1{
+  text-align: center;
+  font-size: 60%;
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+#Buttons{
+  display: flex;
+  width: 100%;
+  font-size: 60%
+}
+#Projects,
+#Experience{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+}
+#Projects button,
+#Experience button{
+  background-color: rgb(113, 196, 113);
+  border: none;
+  color: white;
+  font-size: 50%;
+  text-align: center;
+  padding: 15px 40px;
 }
