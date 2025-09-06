@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 170%;
-  background-color: #ffffff;
+  background-color: rgb(9, 82, 142);
   /*text-align: center;*/
   font-weight: 300;
 }
@@ -17,18 +17,34 @@ h1 {
   text-align: center;
 }
 #Links{
+  display: flex;
   width: 100%;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   font-family: "Roboto";
-  font-size: 70%;
+  font-size: 100%;
   gap: 10px;
   background: gray;
+  position: relative;
 }
 #Links a img{
-  display: inline-block;
+  margin-top: 10px;
   width: 50px;
   height: 50px;
-  padding: 10px;
+}
+#Links button{
+  border-radius: 12px;
+  background-color: rgb(25, 116, 7);
+  border: none;
+  color: white;
+  font-size: 50%;
+  margin-right: auto;
+  padding: 10px 40px;
+  left: 15px;
+  top: 15px;
+  margin-top: 20px;
+  position: absolute;
+  transform: translateY(-50%);
 }
 #About{
   font-size: 50%;
@@ -57,11 +73,11 @@ ul{
 }
 #Buttons{
   display: flex;
-  width: 100%;
-  font-size: 60%
+  text-align: center;
 }
 #Projects,
 #Experience{
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -69,10 +85,13 @@ ul{
 }
 #Projects button,
 #Experience button{
-  background-color: rgb(113, 196, 113);
+  border-radius: 12px;
+  width: 200px;
+  height: 75px;
+  background-color: rgb(25, 116, 7);
   border: none;
   color: white;
-  font-size: 50%;
+  font-size: 40%;
   text-align: center;
-  padding: 15px 40px;
+  padding: 0;
 }
