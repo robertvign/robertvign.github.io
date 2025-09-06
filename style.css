@@ -10,20 +10,6 @@ body {
   background-color: rgb(15, 90, 160);
   font-weight: 300;
 }
-
-body a{
-  color: rgb(250, 210, 140); 
-  text-decoration: none;
-}
-
-body a:hover{
-  text-decoration: underline;
-}
-
-body a:visited{
-  color: rgb(250, 210, 140);
-}
-
 h1 {
   font-family: "Roboto";
   margin: 0;
@@ -43,7 +29,9 @@ h1 {
   background-color: rgb(90, 180, 210);
   position: relative;
 }
-
+#Links a{
+  text-decoration: none;
+}
 #Links a img{
   margin-top: 15px;
   margin-left: 5px;
@@ -51,10 +39,14 @@ h1 {
   width: 50px;
   height: 50px;
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 #Links a img:hover{
   transform: scale(1.05);
+  outline: none;
+  box-shadow: none;
+  text-decoration: none;
 }
 
 #Links button {
@@ -81,6 +73,18 @@ h1 {
   width: 80%;
   text-align: center;
   padding-left: 10%;
+}
+#About a{
+  color: rgb(250, 210, 140); 
+  text-decoration: none;
+}
+
+#About a:hover{
+  text-decoration: underline;
+}
+
+#Aobut a:visited{
+  color: rgb(250, 210, 140);
 }
 
 ul{
