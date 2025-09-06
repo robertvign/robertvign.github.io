@@ -1,14 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
+
 html,
 body {
   font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
   margin: 0;
   padding: 0;
   font-size: 170%;
-  background-color: rgb(9, 82, 142);
-  /*text-align: center;*/
+  color: white;
+  background-color: rgb(15, 90, 160);
   font-weight: 300;
 }
+
+body a{
+  color: rgb(250, 210, 140); 
+  text-decoration: none;
+}
+
+body a:hover{
+  text-decoration: underline;
+}
+
+body a:visited{
+  color: rgb(250, 210, 140);
+}
+
 h1 {
   font-family: "Roboto";
   margin: 0;
@@ -16,6 +31,7 @@ h1 {
   font-size: 140%;
   text-align: center;
 }
+
 #Links{
   display: flex;
   width: 100%;
@@ -24,34 +40,49 @@ h1 {
   font-family: "Roboto";
   font-size: 100%;
   gap: 10px;
-  background: gray;
+  background-color: rgb(90, 180, 210);
   position: relative;
 }
+
 #Links a img{
-  margin-top: 10px;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 50px;
   height: 50px;
+  transition: transform 0.3s ease;
 }
-#Links button{
+
+#Links a img:hover{
+  transform: scale(1.05);
+}
+
+#Links button {
+  transition: transform 0.3s ease;
   border-radius: 12px;
-  background-color: rgb(25, 116, 7);
+  background-color: rgb(240, 160, 120);; 
   border: none;
   color: white;
   font-size: 50%;
-  margin-right: auto;
   padding: 10px 40px;
-  left: 15px;
-  top: 15px;
-  margin-top: 20px;
   position: absolute;
-  transform: translateY(-50%);
+  left: 15px;
+  top: 15px; 
+  transform: scale(1);
+  transform-origin: center; 
 }
+
+#Links button:hover{
+  transform: scale(1.05);
+}
+
 #About{
   font-size: 50%;
   width: 80%;
   text-align: center;
   padding-left: 10%;
 }
+
 ul{
   display: inline-block;
   list-style-type: circle;
@@ -59,10 +90,12 @@ ul{
   font-family: "Roboto";
   text-align: left;
 }
+
 #Titles{
   display: flex;
   text-align: center;
 }
+
 #Titles h1{
   text-align: center;
   font-size: 60%;
@@ -71,10 +104,12 @@ ul{
   align-items: center;
   justify-content: center;
 }
+
 #Buttons{
   display: flex;
   text-align: center;
 }
+
 #Projects,
 #Experience{
   text-align: center;
@@ -83,15 +118,22 @@ ul{
   justify-content: space-evenly;
   width: 50%;
 }
+
 #Projects button,
 #Experience button{
+  transition: transform 0.3s ease;
   border-radius: 12px;
-  width: 200px;
+  width: 220px;
   height: 75px;
-  background-color: rgb(25, 116, 7);
+  background-color: rgb(95, 180, 220); 
   border: none;
   color: white;
   font-size: 40%;
   text-align: center;
   padding: 0;
+}
+
+#Projects button:hover,
+#Experience button:hover{
+  transform: scale(1.05);
 }
