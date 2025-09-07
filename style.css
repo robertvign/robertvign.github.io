@@ -26,7 +26,7 @@ h1 {
   font-family: "Roboto";
   font-size: 100%;
   gap: 10px;
-  background-color: rgb(90, 180, 210);
+  background-color: rgb(78, 155, 181);
   position: relative;
 }
 #Links a{
@@ -36,7 +36,7 @@ h1 {
   margin-top: 15px;
   margin-left: 5px;
   margin-right: 5px;
-  width: 50px;
+  width: auto;
   height: 50px;
   transition: transform 0.3s ease;
   text-decoration: none;
@@ -52,7 +52,7 @@ h1 {
 #Links button {
   transition: transform 0.3s ease;
   border-radius: 12px;
-  background-color: rgb(240, 160, 120);; 
+  background-color: rgb(240, 160, 120); 
   border: none;
   color: white;
   font-size: 50%;
@@ -74,19 +74,21 @@ h1 {
   text-align: center;
   padding-left: 10%;
 }
-#About a{
+#About a,
+#robotics a{
   color: rgb(250, 210, 140); 
   text-decoration: none;
 }
 
-#About a:hover{
+#About a:hover,
+#robotics a:hover{
   text-decoration: underline;
 }
 
-#Aobut a:visited{
+#About a:visited,
+#robotics a:visited{
   color: rgb(250, 210, 140);
 }
-
 ul{
   display: inline-block;
   list-style-type: circle;
@@ -110,10 +112,27 @@ ul{
 }
 
 #Buttons{
+  margin-top: 60px;
   display: flex;
   text-align: center;
 }
-
+#Buttons button{
+  align-items: center;
+  justify-content: space-evenly;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+  width: 350px;
+  height: 110px;
+  background-color: rgb(78, 155, 181);
+  border: none;
+  color: white;
+  font-size: 70%;
+  text-align: center;
+  padding: 0;
+}
+#Buttons button:hover{
+  transform: scale(1.05);
+}
 #Projects,
 #Experience{
   text-align: center;
@@ -123,13 +142,74 @@ ul{
   width: 50%;
 }
 
+#nokia,
+#robotics{
+  width: 80%;
+  font-size: 30%;
+  margin: 20px auto;
+  display: flex;
+  border-radius: 10px;
+  border-color: rgb(240, 160, 120);
+  border-width: 2px;
+  border-style: solid;
+}
+.left{
+  width: 50%;
+  justify-content: center;
+  text-align: center;
+  margin: 0
+}
+.banner{
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+#robotics p,
+#nokia p{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  margin-top: 30px;
+}
+#robotics ul,
+#nokia ul{
+  width: 50%;
+  margin-right: 20px;
+}
+#robotics li{
+  margin-bottom: 15px;
+}
+
+.project{
+  width: 80%;
+  font-size: 30%;
+  margin: 20px auto;
+  display: flex;
+  border-radius: 10px;
+  border-color: rgb(240, 160, 120);
+  border-width: 2px;
+  border-style: solid;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.project h1{
+  padding: 40px;
+}
+.project:hover{
+  transform: scale(1.025);
+  background-color: rgb(29, 105, 176);
+}
+
+/*
 #Projects button,
 #Experience button{
   transition: transform 0.3s ease;
   border-radius: 12px;
   width: 220px;
   height: 75px;
-  background-color: rgb(95, 180, 220); 
+  background-color: rgb(78, 155, 181);
   border: none;
   color: white;
   font-size: 40%;
@@ -141,3 +221,4 @@ ul{
 #Experience button:hover{
   transform: scale(1.05);
 }
+*/
