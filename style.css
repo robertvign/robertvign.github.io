@@ -10,6 +10,18 @@ body {
   background-color: rgb(15, 90, 160);
   font-weight: 300;
 }
+.fade{
+  opacity: 0;
+  animation: fadeIn 0.25s ease-in forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body a{
+  text-decoration: none;
+  color: white;
+}
 h1 {
   font-family: "Roboto";
   margin: 0;
@@ -186,7 +198,7 @@ ul{
 .project{
   width: 80%;
   font-size: 30%;
-  margin: 20px auto;
+  margin: 60px auto;
   display: flex;
   border-radius: 10px;
   border-color: rgb(240, 160, 120);
@@ -202,23 +214,8 @@ ul{
   background-color: rgb(29, 105, 176);
 }
 
-/*
-#Projects button,
-#Experience button{
-  transition: transform 0.3s ease;
-  border-radius: 12px;
-  width: 220px;
-  height: 75px;
-  background-color: rgb(78, 155, 181);
-  border: none;
-  color: white;
-  font-size: 40%;
-  text-align: center;
-  padding: 0;
+.video{
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
-
-#Projects button:hover,
-#Experience button:hover{
-  transform: scale(1.05);
-}
-*/
