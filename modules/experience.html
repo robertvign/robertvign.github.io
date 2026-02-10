@@ -1,57 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Robert Vigneron</title>
-        <link rel="stylesheet" type="text/css" href="../style.css"/>
-    </head>
-    <body>
-        <div id="Links">
-                <div id="centerButtons">
-                    <a href="../resume.pdf"rel="noopener noreferrer">
-                        <img src="../graphics/resume.png" alt="Resume">
+<head>
+    <meta charset="UTF-8">
+    <title>Experience – Robert Vigneron</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f9f8;
+            color: #1a1a1a;
+        }
+
+        a {
+            color: #0f766e;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- Top Bar ---------- */
+        #Links {
+            padding: 1.5rem;
+            background: #0F766E;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #centerButtons img {
+            width: 40px;
+            margin-right: 14px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.2s ease;
+        }
+
+        #centerButtons img:hover {
+            transform: scale(1.1);
+        }
+
+        #back {
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ---------- Page Content ---------- */
+        .fade {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .experience {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .experienceHeader {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .banner {
+            width: 140px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: contain;
+            background: #f1f5f4;
+            padding: 0.75rem;
+        }
+
+        .experienceTitle {
+            font-size: 1.6rem;
+            margin: 0;
+            color: #0f766e;
+        }
+
+        .skills {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        ul {
+            padding-left: 1.25rem;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+        }
+
+        .sublist {
+            margin-top: 0.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 700px) {
+            .experienceHeader {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .banner {
+                width: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Links">
+        <div id="centerButtons">
+            <a href="../resume.pdf"><img src="../graphics/resume.png" alt="Resume"></a>
+            <a href="https://github.com/robertvign"><img src="../graphics/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/robert-vigneron-702592268/">
+                <img src="../graphics/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
+
+        <div id="back" onclick="document.location='../index.html'">
+            ← back
+        </div>
+    </div>
+
+    <div class="fade">
+
+        <!-- Nokia -->
+        <div class="experience">
+            <div class="experienceHeader">
+                <img src="../graphics/nokia.png" class="banner" alt="Nokia">
+
+                <div>
+                    <h2 class="experienceTitle">Nokia — Future Tech Intern</h2>
+                    <p class="skills">
+                        Highlighted skills: Python, SQL, data analysis, communication, initiative, reliability
+                    </p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    Researched, compared, and selectively implemented methods for analyzing packet sequences
+                    <ul class="sublist">
+                        <li>Dimensionality reduction: PCA, LDA, T-SNE</li>
+                        <li>Statistical distance metrics: KLD, JSD, EMD, TVD</li>
+                    </ul>
+                </li>
+                <li>
+                    Automated the selection of distance metrics by benchmarking runtime performance
+                    <ul class="sublist">
+                        <li>Collected, stored, and queried experimental data using SQLite in Python</li>
+                    </ul>
+                </li>
+                <li>
+                    Engineered and presented a complete, robust solution within strict timelines
+                </li>
+            </ul>
+        </div>
+
+        <!-- Robotics -->
+        <div class="experience">
+            <div class="experienceHeader">
+                <img src="../graphics/robotics.png" class="banner" alt="Robotics">
+
+                <div>
+                    <h2 class="experienceTitle">FIRST Robotics — Mechanical Team Lead</h2>
+                    <p class="skills">
+                        Highlighted skills: SolidWorks, Onshape, machining, project management, budgeting
+                    </p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    Led and mentored 50+ mechanical team members over two years, competing in eight events
+                </li>
+                <li>
+                    Directed the brainstorming, design, and fabrication of three multi-mechanism competition robots
+                </li>
+                <li>
+                    Oversaw development and troubleshooting of drivetrain, elevator, and intake systems
+                </li>
+                <li>
+                    Created a complete
+                    <a href="https://cad.onshape.com/documents/5bdb15f98e1e8bfc223ba5ac/w/bb21d92761e351e87dca244f/e/c4b76d4062260e57cf5b9617">
+                        full CAD design
                     </a>
-                    <a href="https://github.com/robertvign"><img src="../graphics/github.png" alt="GitHub"></a>
-                    <a href="https://www.linkedin.com/in/robert-vigneron-702592268/"><img src="../graphics/linkedin.png" alt="LinkedIn"></a>
-                </div>
-            <button onclick="document.location='../index.html'">back</button>
+                    and bill of materials for the team’s 2025 robot
+                </li>
+            </ul>
         </div>
-        <div class="fade">
-            <div id="nokia">
-                <div id="left">
-                    <img src="../graphics/nokia.png" class="banner">
-                    <p>Highlighted skills: Python, SQL, communication, initiative taking, reliability</p>
-                </div>
-                <ul>
-                    <li>Researched, compared, and selectively implemented methods of analyzing packet sequences</li>
-                        <ul class="sublist">
-                            <li>Dimensionality reduction methods: PCA, LDA, T-SNE</li>
-                            <li>Statistical distance metrics: KLD, JSD, EMD, TVD</li>
-                        </ul>
-                    <li>Automated the selection of a distance metric by comparing runtime data</li>
-                        <ul class="sublist">
-                            <li>Collected, stored, and accessed experimental data in databases using SQLite in Python</li>
-                        </ul>
-                    <li>Engineered and demonstrated a complete and robust solution within required timelines</li>
-                </ul>
-            </div>
-            <div id="robotics">
-            <div id="left">
-                    <img src="../graphics/robotics.png" class="banner">
-                    <p>Highlighted skills: Solidworks, Onshape, Machinery operation, project management, budgeting</p>
-                </div>
-                <ul>
-                    <li>Taught and engaged fifty mechanical team members as the mechanical team lead for two years, attending eight competitions</li>
-                    <li>Directed the brainstorming, designing, and fabrication of three multi-mechanism robots which competed in FIRST Robotics competitions</li>
-                    <li>Led the technical development and troubleshooting of drivetrain, elevator, and intake system</li>
-                    <li>Created a
-                        <a href="https://cad.onshape.com/documents/5bdb15f98e1e8bfc223ba5ac/w/bb21d92761e351e87dca244f/e/c4b76d4062260e57cf5b9617">
-                            full CAD design
-                        </a> in Onshape and bill of materials for the team’s 2025 robot</li>
-                </ul>
-            </div>
-        </div>
-    </body>
 
-
+    </div>
+</body>
 </html>
-

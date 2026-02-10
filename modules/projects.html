@@ -1,48 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Robert Vigneron</title>
-        <link rel="stylesheet" type="text/css" href="../style.css"/>
-    </head>
-    <body>
-        <div id="Links" href="https://github.com/robertvign/PARAGON">
-                <div id="centerButtons">
-                    <a href="../resume.pdf"rel="noopener noreferrer">
-                        <img src="../graphics/resume.png" alt="Resume">
-                    </a>
-                    <a href="https://github.com/robertvign"><img src="../graphics/github.png" alt="GitHub"></a>
-                    <a href="https://www.linkedin.com/in/robert-vigneron-702592268/"><img src="../graphics/linkedin.png" alt="LinkedIn"></a>
-                </div>
-            <button class="fade" onclick="document.location='../index.html'">back</button>
+<head>
+    <meta charset="UTF-8">
+    <title>Robert Vigneron</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f9f8;
+            color: #1a1a1a;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---------- Top Bar ---------- */
+        #Links {
+            padding: 1.5rem;
+            text-align: center;
+            background: #0F766E;
+            color: white;
+        }
+
+        #centerButtons a img {
+            width: 40px;
+            margin: 0 10px;
+            transition: transform 0.2s ease;
+            filter: brightness(0) invert(1);
+        }
+
+        #centerButtons a img:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.5rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        /* ---------- Content ---------- */
+        .fade {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* ---------- Grid ---------- */
+        .projectsGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.75rem;
+            border-radius: 14px;
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease,
+                        box-shadow 0.2s ease,
+                        background-color 0.2s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            background-color: #ecfdf5; /* subtle green highlight */
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .projectTitle {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #0f766e;
+        }
+
+        .projectTitle span {
+            font-size: 0.95rem;
+            font-weight: 400;
+            opacity: 0.7;
+            color: #1a1a1a;
+        }
+
+        .projectDescription {
+            margin: 0.75rem 0;
+            line-height: 1.55;
+            color: #333;
+        }
+
+        .projectSkills {
+            padding-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .projectSkills li {
+            margin-bottom: 0.35rem;
+            color: #444;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 1rem;
+            background: black;
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 900px) {
+            .projectsGrid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Links">
+        <div id="centerButtons">
+            <a href="../resume.pdf"><img src="../graphics/resume.png" alt="Resume"></a>
+            <a href="https://github.com/robertvign"><img src="../graphics/github.png" alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/robert-vigneron-702592268/">
+                <img src="../graphics/linkedin.png" alt="LinkedIn">
+            </a>
         </div>
-        <div class="fade">
-            <a  href="https://github.com/robertvign/PARAGON">
+
+        <button onclick="document.location='../index.html'">back</button>
+    </div>
+
+    <div class="fade">
+        <div class="projectsGrid">
+
+            <!-- Project 1 -->
+            <a href="https://github.com/robertvign/PARAGON">
                 <div class="project">
-                    <div class="left">
-                        <h1 class="projectTitle">Paragon (python video game)</h1>
-                        <p class="description">An educational top-down story game which serves as a way to practice math skills.</p>
-                        <p class="description">Skills practiced: object-oriented programming in python, file handling, project progress tracking, self-resarch</p>
-                    </div>
-                    <div class="video">
-                        <video autoplay loop muted playsinline width="300" height="auto"><source src="../graphics/PARAGON_Demo.mp4" type="video/mp4"></video>     
-                    </div>
+                    <h2 class="projectTitle">
+                        Paragon <span>(Python Video Game)</span>
+                    </h2>
+
+                    <p class="projectDescription">
+                        An educational top-down story game designed to help players practice and reinforce math skills.
+                    </p>
+
+                    <ul class="projectSkills">
+                        <li>Object-oriented programming (Python)</li>
+                        <li>File handling & save systems</li>
+                        <li>Project planning & progress tracking</li>
+                        <li>Independent research</li>
+                    </ul>
+
+                    <video autoplay loop muted playsinline>
+                        <source src="../graphics/PARAGON_Demo.mp4" type="video/mp4">
+                    </video>
                 </div>
             </a>
-            <a  href="https://github.com/robertvign/arduino-binary-counter">
+
+            <!-- Project 2 -->
+            <a href="https://github.com/robertvign/arduino-binary-counter">
                 <div class="project">
-                    <div class="left">
-                        <h1 class="projectTitle">Arduino Binary Counter</h1>
-                        <p class="description">A simple LED binary counter with up and down buttons.</p>
-                        <p class="description">Skills practiced: C++, Essential electrical/wiring knowledge</p>
-                    </div>
-                    <div class="video">
-                        <video autoplay loop muted playsinline width="300" height="auto"><source src="../graphics/binary_counter.mp4" type="video/mp4"></video>     
-                    </div>
+                    <h2 class="projectTitle">
+                        Arduino Binary Counter
+                    </h2>
+
+                    <p class="projectDescription">
+                        A simple LED-based binary counter controlled with up and down buttons.
+                    </p>
+
+                    <ul class="projectSkills">
+                        <li>C++ programming</li>
+                        <li>Microcontroller development</li>
+                        <li>Basic electronics & wiring</li>
+                    </ul>
+
+                    <video autoplay loop muted playsinline>
+                        <source src="../graphics/binary_counter.mp4" type="video/mp4">
+                    </video>
                 </div>
             </a>
+
+            <!-- Placeholder Project 3 -->
+            <div class="project">
+                <h2 class="projectTitle">
+                    Rubik's Skewb Solver <span></span>
+                </h2>
+
+                <p class="projectDescription">
+                    A rubik's skewb-solving robot powered by VEX IQ with custom 3D-printed parts
+                </p>
+
+                <ul class="projectSkills">
+                    <li>C++ Programming</li>
+                    <li>Solidworks design with electrical components</li>
+                    <li>PID Creation and Tuning</li>
+                </ul>
+            </div>
+
+            <!-- Placeholder Project 4 -->
+            <div class="project">
+                <h2 class="projectTitle">
+                    FSAE push bar/rear jack <span>(In Progress)</span>
+                </h2>
+
+                <p class="projectDescription">
+                    A modular 2-in-1 push bar and rear jack for a 550lbs+ racecar for efficient transportation at FSAE Competitions, in accordance with rules
+                </p>
+
+                <ul class="projectSkills">
+                    <li>FEA with ansys to calculate safety factors</li>
+                    <li>Solidworks weldments design</li>
+                    <li>Research and iteration</li>
+                </ul>
+            </div>
+
         </div>
-        </body>
-
-
+    </div>
+</body>
 </html>
-
