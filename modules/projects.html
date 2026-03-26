@@ -57,6 +57,11 @@
             gap: 2rem;
         }
 
+        .fade a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         .project {
             background: white;
             border-radius: 16px;
@@ -64,22 +69,34 @@
             flex-direction: column;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+            cursor: pointer;
+            height: 100%; 
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+            filter: brightness(0.97);
+        }
+
+        .project:active {
+            transform: scale(0.98);
         }
 
         .project video,
         .project img,
         .project .placeholder {
             width: 100%;
-            height: 250px; /* same height as your videos */
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             font-weight: bold;
             color: #0f766e;
-            background-color: #e5f2f1; /* optional light background */
+            background-color: #e5f2f1;
         }
-
 
         .projectContent {
             padding: 1.5rem;
@@ -107,11 +124,6 @@
             line-height: 1.4;
         }
 
-        .sublist {
-            margin-top: 0.3rem;
-            margin-bottom: 0.5rem;
-        }
-
         .empty {
             background: transparent;
             border: none;
@@ -121,7 +133,13 @@
         /* Responsive */
         @media (max-width: 900px) {
             .fade {
-                grid-template-columns: 1fr;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 2.5rem 1.5rem;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                align-items: stretch; /* ADD THIS */
             }
         }
     </style>
@@ -144,81 +162,104 @@
 
     <div class="fade">
 
-        <!-- Push Bar / Rear Jack - In Progress -->
-        <div class="project">
-            <div class="placeholder">In Progress</div>
-            <div class="projectContent">
-                <h2 class="projectTitle">Formula Electric — Modular Push Bar / Rear Jack</h2>
-                <p class="skills">SolidWorks, FEA, Manufacturing</p>
-                <ul>
-                    <li>Owned a modular push bar/rear jack for a 500lbs+ racecar with increased usability and additional features</li>
-                    <li>Iteratively performed FEA to validate safety factors and durability across multiple vehicles</li>
-                </ul>
+        <!-- Push Bar -->
+        <a href="projects/push_bar.html">
+            <div class="project">
+                <div class="placeholder">In Progress</div>
+                <div class="projectContent">
+                    <h2 class="projectTitle">Formula Electric — Modular Push Bar / Rear Jack</h2>
+                    <p class="skills">SolidWorks, FEA, Manufacturing</p>
+                    <ul>
+                        <li>Owned a modular push bar/rear jack for a 500lbs+ racecar with increased usability and additional features</li>
+                        <li>Iteratively performed FEA to validate safety factors and durability across multiple vehicles</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <!-- Rubik's Skewb Robot -->
-        <div class="project">
-            <video autoplay loop muted playsinline>
-                <source src="../graphics/SKEWB_demo.mp4" type="video/mp4">
-            </video>
-            <div class="projectContent">
-                <h2 class="projectTitle">Rubik's Skewb Solving Robot</h2>
-                <p class="skills">SolidWorks, 3D Printing, C++</p>
-                <ul>
-                    <li>Devised a method to autonomously reach any cube state using only 4 motors</li>
-                    <li>Created a full CAD in SolidWorks including custom 3D-printed parts and imported standard parts</li>
-                    <li>Created and tuned 8 independent functions to precisely and quickly rotate corners 90 degrees using PIDs</li>
-                </ul>
+        <!-- Differential Test Bench -->
+        <a href="projects/differential_test_bench.html">
+            <div class="project">
+                <div class="placeholder">In Progress</div>
+                <div class="projectContent">
+                    <h2 class="projectTitle">Differential Test Bench</h2>
+                    <p class="skills">Mechanical Design, Matlab, Test procedures</p>
+                    <ul>
+                        <li>Experimentally characterized my FSAE team's custom limited slip differential for the first time in 12 years</li>
+                        <li>Created the test bench for 2 configurations: finding the torque-bias ratio and finding the locking torque</li>
+                        <li>Enabling validation of design choices and allowing for future customization</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </a>
+
+        <!-- Skewb -->
+        <a href="projects/skewb.html">
+            <div class="project">
+                <video autoplay loop muted playsinline>
+                    <source src="../graphics/skewb_demo.mp4" type="video/mp4">
+                </video>
+                <div class="projectContent">
+                    <h2 class="projectTitle">Rubik's Skewb Solving Robot</h2>
+                    <p class="skills">SolidWorks, 3D Printing, C++</p>
+                    <ul>
+                        <li>Devised a method to autonomously reach any cube state using only 4 motors</li>
+                        <li>Created a full CAD in SolidWorks including custom 3D-printed parts and imported standard parts</li>
+                        <li>Created and tuned control functions to precisely rotate corners using PID control</li>
+                    </ul>
+                </div>
+            </div>
+        </a>
 
         <!-- Duosingo -->
-        <div class="project">
-            <video autoplay loop muted playsinline>
-                <source src="../graphics/duosingo.mp4" type="video/mp4">
-            </video>
-            <div class="projectContent">
-                <h2 class="projectTitle">Duosingo - Language Learning App</h2>
-                <p class="skills">Python, Git, APIs, AI</p>
-                <ul>
-                    <li>Performed phonetic comparison using a pre-trained AI model to evaluate user performance and provide feedback</li>
-                    <li>Developed a fully autonomous translated lyric video generator using ElevenLabs and Gemini API</li>
-                </ul>
+        <a href="projects/duosingo.html">
+            <div class="project">
+                <video autoplay loop muted playsinline>
+                    <source src="../graphics/duosingo.mp4" type="video/mp4">
+                </video>
+                <div class="projectContent">
+                    <h2 class="projectTitle">Duosingo - Language Learning App</h2>
+                    <p class="skills">Python, Git, APIs, AI</p>
+                    <ul>
+                        <li>Performed phonetic comparison using a pre-trained AI model to evaluate user performance</li>
+                        <li>Developed an autonomous translated lyric video generator using APIs</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <!-- Arduino Binary Counter -->
-        <div class="project">
-            <video autoplay loop muted playsinline>
-                <source src="../graphics/binary_counter.mp4" type="video/mp4">
-            </video>
-            <div class="projectContent">
-                <h2 class="projectTitle">Arduino Binary Counter</h2>
-                <p class="skills">Arduino IDE, Breadboarding, C++</p>
-                <ul>
-                    <li>Wired and programmed a counter with up and down buttons which displays a 4-digit binary sequence on LEDs</li>
-                </ul>
+        <!-- Binary Counter -->
+        <a href="projects/binary_counter.html">
+            <div class="project">
+                <video autoplay loop muted playsinline>
+                    <source src="../graphics/binary_counter.mp4" type="video/mp4">
+                </video>
+                <div class="projectContent">
+                    <h2 class="projectTitle">Arduino Binary Counter</h2>
+                    <p class="skills">Arduino IDE, Breadboarding, C++</p>
+                    <ul>
+                        <li>Built a counter with up/down inputs displaying binary output on LEDs</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Paragon -->
-        <div class="project">
-            <video autoplay loop muted playsinline>
-                <source src="../graphics/paragon_demo.mp4" type="video/mp4">
-            </video>
-            <div class="projectContent">
-                <h2 class="projectTitle">Paragon – Python Video Game</h2>
-                <p class="skills">Python, Git, OOP</p>
-                <ul>
-                    <li>Developed an educational story game using Pygame in Python with customizable learning goals</li>
-                    <li>Implemented obstacle collisions and interactions in a 2D player-centered custom world</li>
-                </ul>
+        <a href="projects/paragon.html">
+            <div class="project">
+                <video autoplay loop muted playsinline>
+                    <source src="../graphics/PARAGON_Demo.mp4" type="video/mp4">
+                </video>
+                <div class="projectContent">
+                    <h2 class="projectTitle">Paragon – Python Video Game</h2>
+                    <p class="skills">Python, Git, OOP</p>
+                    <ul>
+                        <li>Developed an educational story game using Pygame</li>
+                        <li>Implemented collision systems and interactive world mechanics</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-
-        <!-- Empty rectangle for uneven layout -->
-        <div class="empty"></div>
+        </a>
 
     </div>
 </body>

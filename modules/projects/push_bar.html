@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project – Template</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f9f8;
+    color: #1a1a1a;
+}
+
+a {
+    color: #0f766e;
+    text-decoration: none;
+}
+
+/* ---------- Top Bar ---------- */
+#Links {
+    padding: 1.2rem 1.5rem;
+    background: #0F766E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#centerButtons img {
+    width: 36px;
+    margin-right: 12px;
+    filter: brightness(0) invert(1);
+}
+
+#back {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ---------- Layout ---------- */
+.container {
+    max-width: 1000px; /* wider */
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem; /* reduced vertical space */
+}
+
+/* ---------- Header ---------- */
+.projectHeader {
+    margin-bottom: 1.5rem;
+}
+
+.projectTitle {
+    font-size: 2rem;
+    color: #0f766e;
+    margin-bottom: 0.4rem;
+}
+
+.projectDesc {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* ---------- Update Section ---------- */
+.update {
+    background: white;
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+}
+
+.updateTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #0f766e;
+}
+
+.updateDate {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 0.8rem;
+}
+
+/* ---------- Text ---------- */
+.update p {
+    line-height: 1.45;
+    margin-bottom: 0.8rem;
+}
+
+/* ---------- Image Grid ---------- */
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+}
+
+.imageCard {
+    background: #f1f5f4;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.imageCard img {
+    width: 100%;
+    height: 200px; /* bigger visual, less scroll */
+    object-fit: cover;
+}
+
+.caption {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    color: #444;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .projectTitle {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="Links">
+    <div id="centerButtons">
+        <a href="../resume.pdf"><img src="../graphics/resume.png"></a>
+        <a href="https://github.com/robertvign"><img src="../graphics/github.png"></a>
+        <a href="https://www.linkedin.com/in/robert-vigneron-702592268/">
+            <img src="../graphics/linkedin.png">
+        </a>
+    </div>
+
+    <!-- FIXED PATH -->
+    <div id="back" onclick="document.location='../modules/projects.html'">
+        ← back
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ---------- Project Header ---------- -->
+    <div class="projectHeader">
+        <div class="projectTitle">Modular Push Bar/Rear Jack</div>
+        <div class="projectDesc">
+            In recent history, our team has not been able to build a push bar which can last more than one year because of changes with the car or general fatigue.
+            Aiming to reduce work and spending in the future, I aimed to create a push bar which fits a couple criteria:
+            <list>
+                <li>Modular design to modify according to future cars and to make it easily transportable</li>
+                <li>Can push the bar with minimal difficulty</li>
+                <li>Is easy to align with the car</li>
+                <li>Can jack the car up for long periods of time with minimal fatigue</li>
+                <li>Is compliant with FSAE rules</li>
+            </list>
+        </div>
+    </div>
+
+    <!-- ---------- Update Block ---------- -->
+    <div class="update">
+        <div class="updateTitle">Initial Concept</div>
+
+
+        <p>
+            Last year's structure (which was still intact) looked fairly bulky, and I made an attempt to reduce the mass while still combatting fatigue.
+            While I eventually realized there was no way that 1 piece of tubing could withstand the weight of the car,
+            I learned a lot about bending strength.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Early sketch of concept</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">First CAD attempt</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------- Update Block ---------- -->
+    <div class="update">
+        <div class="updateTitle">First Prototype</div>
+        <div class="updateDate">March 28, 2026</div>
+
+        <p>
+            Talk about what changed, what worked, what didn’t.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">3D printed parts</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Assembly progress</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Testing setup</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------- Update Block ---------- -->
+    <div class="update">
+        <div class="updateTitle">Iteration #2</div>
+        <div class="updateDate">April 2, 2026</div>
+
+        <p>
+            Add more progress updates as you go.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Improved design</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

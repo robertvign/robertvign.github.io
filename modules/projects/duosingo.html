@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project – Template</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f9f8;
+    color: #1a1a1a;
+}
+
+a {
+    color: #0f766e;
+    text-decoration: none;
+}
+
+/* ---------- Top Bar ---------- */
+#Links {
+    padding: 1.5rem;
+    background: #0F766E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#centerButtons img {
+    width: 40px;
+    margin-right: 14px;
+    filter: brightness(0) invert(1);
+}
+
+#back {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ---------- Layout ---------- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* ---------- Header ---------- */
+.projectHeader {
+    margin-bottom: 2rem;
+}
+
+.projectTitle {
+    font-size: 2.2rem;
+    color: #0f766e;
+    margin-bottom: 0.5rem;
+}
+
+.projectDesc {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* ---------- Update Section ---------- */
+.update {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.updateTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #0f766e;
+}
+
+.updateDate {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Text ---------- */
+.update p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Image Grid ---------- */
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.imageCard {
+    background: #f1f5f4;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.imageCard img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.caption {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    color: #444;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .projectTitle {
+        font-size: 1.7rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="Links">
+    <div id="centerButtons">
+        <a href="../resume.pdf"><img src="../graphics/resume.png"></a>
+        <a href="https://github.com/robertvign"><img src="../graphics/github.png"></a>
+        <a href="https://www.linkedin.com/in/robert-vigneron-702592268/">
+            <img src="../graphics/linkedin.png">
+        </a>
+    </div>
+
+    <div id="back" onclick="document.location='projects.html'">
+        ← back
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ---------- Project Header ---------- -->
+    <div class="projectHeader">
+        <div class="projectTitle">Project Name</div>
+        <div class="projectDesc">
+            Short description of what this project is, goals, and what you're building.
+        </div>
+    </div>
+
+    <!-- ---------- Update Block ---------- -->
+    <div class="update">
+        <div class="updateTitle">Initial Concept</div>
+        <div class="updateDate">March 25, 2026</div>
+
+        <p>
+            Describe what you worked on here. Keep it casual—this is more like a dev log.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Early sketch of concept</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">First CAD attempt</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------- Update Block ---------- -->
+    <div class="update">
+        <div class="updateTitle">First Prototype</div>
+        <div class="updateDate">March 28, 2026</div>
+
+        <p>
+            Talk about what changed, what worked, what didn’t.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">3D printed parts</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Assembly progress</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Testing setup</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------- Copy this block for more updates ---------- -->
+    <div class="update">
+        <div class="updateTitle">Iteration #2</div>
+        <div class="updateDate">April 2, 2026</div>
+
+        <p>
+            Add more progress updates as you go.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="https://via.placeholder.com/400x300">
+                <div class="caption">Improved design</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
