@@ -84,15 +84,8 @@
             transform: scale(0.98);
         }
 
-        /* ✅ FIXED MEDIA HANDLING */
         .project video,
-        .project img {
-            width: 100%;
-            height: 250px;
-            object-fit: contain; /* prevents cropping */
-            background-color: #e5f2f1; /* bars instead of crop */
-        }
-
+        .project img,
         .project .placeholder {
             width: 100%;
             height: 250px;
@@ -146,7 +139,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
-                align-items: stretch;
+                align-items: stretch; /* ADD THIS */
             }
         }
     </style>
@@ -169,6 +162,7 @@
 
     <div class="fade">
 
+        <!-- Push Bar -->
         <a href="projects/push_bar.html">
             <div class="project">
                 <div class="placeholder">In Progress</div>
@@ -183,6 +177,7 @@
             </div>
         </a>
 
+        <!-- Differential Test Bench -->
         <a href="projects/differential_test_bench.html">
             <div class="project">
                 <div class="placeholder">In Progress</div>
@@ -198,6 +193,7 @@
             </div>
         </a>
 
+        <!-- Skewb -->
         <a href="projects/skewb.html">
             <div class="project">
                 <video autoplay loop muted playsinline>
@@ -215,6 +211,7 @@
             </div>
         </a>
 
+        <!-- Duosingo -->
         <a href="projects/duosingo.html">
             <div class="project">
                 <video autoplay loop muted playsinline>
@@ -231,6 +228,7 @@
             </div>
         </a>
 
+        <!-- Binary Counter -->
         <a href="projects/binary_counter.html">
             <div class="project">
                 <video autoplay loop muted playsinline>
@@ -246,6 +244,7 @@
             </div>
         </a>
 
+        <!-- Paragon -->
         <a href="projects/paragon.html">
             <div class="project">
                 <video autoplay loop muted playsinline>
