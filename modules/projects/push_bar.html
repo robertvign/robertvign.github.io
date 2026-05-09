@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Differential Test Bench</title>
+<title>Push Bar</title>
 
 <style>
 body {
@@ -103,18 +103,55 @@ a {
     text-align: center;
 }
 
-/* ✅ FIXED: no cropping */
 .imageCard img {
     width: 100%;
     height: 200px;
-    object-fit: contain; /* shows full image */
-    background-color: #e5f2f1; /* fills empty space */
+    object-fit: contain;
+    background-color: #e5f2f1;
+
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.imageCard img:hover {
+    transform: scale(1.02);
 }
 
 .caption {
     font-size: 0.8rem;
     padding: 0.4rem;
     color: #444;
+}
+
+/* ---------- Image Popup ---------- */
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#imageModal img {
+    max-width: 95%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    background: white;
+}
+
+#closeModal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* ---------- Responsive ---------- */
@@ -150,10 +187,9 @@ a {
 
     <div class="projectHeader">
         <div class="projectTitle">Modular Push Bar/Rear Jack</div>
-        <div class="projectDesc"> 
-            With this project, I aimed to experimentally characterize the team's differential for the first time in team history.
-            There has been very in depth calculations in the past ~20 years that the team has been using this design, but experimental data
-            adds a whole new level of reliability for the design.
+
+        <div class="projectDesc">
+            With this project, I aimed to create a mechanism which can: 1. jack the car up to full wheel rebound, and 2. allow 2 people to push the car without touching it, as per rules.
         </div>
     </div>
 
@@ -163,7 +199,7 @@ a {
         <p>
             Last year's structure (which was still intact) looked fairly bulky, and I made an attempt to reduce the mass while still combatting fatigue.
             While I eventually realized there was no way that 1 piece of tubing could withstand the weight of the car,
-            I learned a lot about bending strength.
+            I learned a lot about bending strength. I iterated on the tube wall thickness and some aspects of the lower geometry using ansys workbench.
         </p>
 
         <div class="imageGrid">
@@ -184,17 +220,16 @@ a {
 
         <p>
             After some iterative FEA, it was determined that the frame from last year's design could be reused,
-            with some small modifications to make the design more modular and usable. A shame the team's documentation wasn't better or
-            it would have saved me some time here, but it was still a good learning opportunity.
-            Major changes that were made:
-            <ul>
+            with some small modifications to make the design more modular and usable.
+        </p>
+
+        <ul>
             <li>lots of hand calcs and FEA with Ansys to spec the wheels</li>
             <li>lighter and faster to use fire extinguisher holder</li>
             <li>removable handle for easier transportation (also specced with FEA)</li>
             <li>more robust mounting of the wheels due to concerns from last year</li>
-            <li>modular claw design to ensure compatability with future cars</li>
-            </ul>
-        </p>
+            <li>modular claw design to ensure compatibility with future cars</li>
+        </ul>
 
         <div class="imageGrid">
             <div class="imageCard">
@@ -218,27 +253,83 @@ a {
         <div class="updateTitle">Manufacturing!</div>
 
         <p>
-            Add more progress updates as you go.
+            Finally diving into the manufacturing — this meant modifying the old frame and creating the new parts to be added.
         </p>
 
         <div class="imageGrid">
             <div class="imageCard">
                 <img src="../../graphics/push bar/claw_welds.png">
-                <div class="caption">claw welds (done by me!)</div>
+                <div class="caption">Claw welds (done by me!)</div>
             </div>
+
             <div class="imageCard">
                 <img src="../../graphics/push bar/drilling_jig.png">
-                <div class="caption">jig to drill the holes</div>
+                <div class="caption">Jig to drill the holes</div>
             </div>
+
             <div class="imageCard">
                 <img src="../../graphics/push bar/final_mfg.png">
                 <div class="caption">Final manufactured product!</div>
             </div>
+        </div>
+    </div>
+
+    <div class="update">
+        <div class="updateTitle">Final touches</div>
+
+        <p>
+            With the push bar now functional, some finishing touches were all that remained.
+            It was painted to improve appearance, and the fire extinguisher was repositioned so the bar could stand on its own without compromising accessibility.
+        </p>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="../../graphics/push bar/paint.jpeg">
+                <div class="caption">Painting</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="../../graphics/push bar/extinguisher.jpeg">
+                <div class="caption">Fire extinguisher placement modification</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="../../graphics/push bar/push_bar_use.jpg">
+                <div class="caption">In use at comp!</div>
             </div>
         </div>
     </div>
 
 </div>
+
+<!-- Image Modal -->
+<div id="imageModal">
+    <span id="closeModal">&times;</span>
+    <img id="modalImage" src="">
+</div>
+
+<script>
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.getElementById("closeModal");
+
+document.querySelectorAll(".imageCard img").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+</script>
 
 </body>
 </html>

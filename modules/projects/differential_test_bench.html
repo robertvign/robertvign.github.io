@@ -149,7 +149,7 @@ a {
 <div class="container">
 
     <div class="projectHeader">
-        <div class="projectTitle">Modular Push Bar/Rear Jack</div>
+        <div class="projectTitle">Differential Test Bench</div>
         <div class="projectDesc">
             While the original design for the team's differential was made in 2006, experimental testing has never been done.
             There has been many calculations to optimize it, but this test bench aims to validate those calculations with actual data,
@@ -171,7 +171,7 @@ a {
             The design was made with 3 criteria in mind: ease of installing/removing the diff, stability, and ease to test.
             It was fairly simple to make a design which could hold the diff in a stable position, along with a mock motor shaft to be able 
             to apply torque. The 2 main support beams are modelled to be the same as the tubing on the car which the diff is mounted to,
-            so installation is as easy as it can be. the test bench can sit flat on a table and can be clamped down for easy testing.
+            so installation is as easy as it can be. the test bench can sit flat on a table and can be clamped down for easy testing. 
         </p>
 
         <div class="imageGrid">
@@ -181,33 +181,33 @@ a {
             </div>
 
             <div class="imageCard">
-                <img src="../../graphics/push bar/push_bar_cad1.png">
-                <div class="caption">Initial CAD</div>
+                <img src="../../graphics/test bench/extrusions.png">
+                <div class="caption">Extrusions milled for precision</div>
             </div>
         </div>
     </div>
 
     <div class="update">
-        <div class="updateTitle">Major design update</div>
+        <div class="updateTitle">First Iteration of Tests</div>
 
         <p>
-            After some iterative FEA, it was determined that the frame from last year's design could be reused,
-            with some small modifications to make the design more modular and usable. A shame the team's documentation wasn't better or
-            it would have saved me some time here, but it was still a good learning opportunity.
-            Major changes that were made:
+            The bench proved to be quite unstable while testing because of the sheer amount of torque needed to "open"
+            the differential, but this was easily solved by clamping it to the table. The only pitfall of this was that 
+            you must redo the clamps on the opposite side of the bench should you wish to test the other direction of turning.
+            <br>The first couple sessions of using the test bench were used to perfect the test plan which was made prior to manufacturing.
+            Some things that were verified or discovered experimentally:
             <ul>
-            <li>lots of hand calcs and FEA with Ansys to spec the wheels</li>
-            <li>lighter and faster to use fire extinguisher holder</li>
-            <li>removable handle for easier transportation (also specced with FEA)</li>
-            <li>more robust mounting of the wheels due to concerns from last year</li>
-            <li>modular claw design to ensure compatability with future cars</li>
+                <li>The diff had to be spun thoroughly to distribute the oil before tests became reliable</li>
+                <li>Bolt tightness affects breakaway torque values</li>
+                <li>Wear on components has a huge impact on torque values</li>
             </ul>
+
         </p>
 
         <div class="imageGrid">
             <div class="imageCard">
                 <img src="../../graphics/push bar/new_cad.png">
-                <div class="caption">First revision of final design</div>
+                <div class="caption">R</div>
             </div>
 
             <div class="imageCard">
@@ -223,12 +223,13 @@ a {
     </div>
 
     <div class="update">
-        <div class="updateTitle">Manufacturing!</div>
+        <div class="updateTitle">Data Collection</div>
 
         <p>
-            I personally did a large portion of the manufacturing and oversaw others as a learning opportunity.
+            Now that it had been confirmed that it is possible to tune the characteristics of the differential based on component wear and bolt tightness, data could be collected.
+            
         </p>
-
+<!--
         <div class="imageGrid">
             <div class="imageCard">
                 <img src="../../graphics/push bar/claw_welds.png">
@@ -263,7 +264,7 @@ a {
                 <div class="caption">TBD</div>
             </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 
