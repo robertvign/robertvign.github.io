@@ -70,17 +70,21 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-            cursor: pointer;
-            height: 100%; 
+            height: 100%;
+            cursor: default;
         }
 
-        .project:hover {
+        .fade a .project {
+            cursor: pointer;
+        }
+
+        .fade a .project:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
             filter: brightness(0.97);
         }
 
-        .project:active {
+        .fade a .project:active {
             transform: scale(0.98);
         }
 
@@ -89,13 +93,18 @@
         .project .placeholder {
             width: 100%;
             height: 250px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             font-size: 1.5rem;
             font-weight: bold;
             color: #0f766e;
+
             background-color: #e5f2f1;
+
+            object-fit: contain;
         }
 
         .projectContent {
@@ -124,32 +133,27 @@
             line-height: 1.4;
         }
 
-        .empty {
-            background: transparent;
-            border: none;
-            height: 200px;
-        }
-
         /* Responsive */
         @media (max-width: 900px) {
             .fade {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 2.5rem 1.5rem;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-                align-items: stretch; /* ADD THIS */
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 
 <body>
+
     <div id="Links">
         <div id="centerButtons">
-            <a href="../resume.pdf"><img src="../graphics/resume.png" alt="Resume"></a>
-            <a href="https://github.com/robertvign"><img src="../graphics/github.png" alt="GitHub"></a>
+            <a href="../resume.pdf">
+                <img src="../graphics/resume.png" alt="Resume">
+            </a>
+
+            <a href="https://github.com/robertvign">
+                <img src="../graphics/github.png" alt="GitHub">
+            </a>
+
             <a href="https://www.linkedin.com/in/robert-vigneron-702592268/">
                 <img src="../graphics/linkedin.png" alt="LinkedIn">
             </a>
@@ -165,13 +169,25 @@
         <!-- Push Bar -->
         <a href="projects/push_bar.html">
             <div class="project">
-                <img src="../graphics/complete_push_bar.jpg"></img>
+                <img src="../graphics/complete_push_bar.jpg">
+
                 <div class="projectContent">
-                    <h2 class="projectTitle">Formula Electric — Modular Push Bar / Rear Jack</h2>
-                    <p class="skills">SolidWorks, FEA, Manufacturing</p>
+                    <h2 class="projectTitle">
+                        Formula Electric — Modular Push Bar / Rear Jack
+                    </h2>
+
+                    <p class="skills">
+                        SolidWorks, FEA, Manufacturing
+                    </p>
+
                     <ul>
-                        <li>Owned a modular push bar/rear jack for a 500lbs+ racecar with increased usability and additional features</li>
-                        <li>Iteratively performed FEA to validate safety factors and durability across multiple vehicles</li>
+                        <li>
+                            Owned a modular push bar/rear jack for a 500+ lb racecar with increased usability and additional features
+                        </li>
+
+                        <li>
+                            Iteratively performed FEA to validate safety factors and durability across multiple vehicles
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -180,14 +196,29 @@
         <!-- Differential Test Bench -->
         <a href="projects/differential_test_bench.html">
             <div class="project">
-                <img src="../graphics/complete_push_bar.jpg"></img>
+                <img src="../graphics/real_bench.jpg">
+
                 <div class="projectContent">
-                    <h2 class="projectTitle">Differential Test Bench</h2>
-                    <p class="skills">Mechanical Design, Matlab, Test procedures</p>
+                    <h2 class="projectTitle">
+                        Differential Test Bench
+                    </h2>
+
+                    <p class="skills">
+                        Mechanical Design, Matlab, Test Procedures
+                    </p>
+
                     <ul>
-                        <li>Experimentally characterized my FSAE team's custom limited slip differential for the first time in 12 years</li>
-                        <li>Created the test bench for 2 configurations: finding the torque-bias ratio and finding the breakaway torque</li>
-                        <li>Enabling validation of design choices and allowing for future customization</li>
+                        <li>
+                            Experimentally characterized my FSAE team's custom limited-slip differential for the first time in 12 years
+                        </li>
+
+                        <li>
+                            Created the test bench for torque-bias-ratio and breakaway torque testing
+                        </li>
+
+                        <li>
+                            Enabled validation of design choices and future customization
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -199,68 +230,111 @@
                 <video autoplay loop muted playsinline>
                     <source src="../graphics/skewb_demo.mp4" type="video/mp4">
                 </video>
+
                 <div class="projectContent">
-                    <h2 class="projectTitle">Rubik's Skewb Solving Robot</h2>
-                    <p class="skills">SolidWorks, 3D Printing, C++</p>
+                    <h2 class="projectTitle">
+                        Rubik's Skewb Solving Robot
+                    </h2>
+
+                    <p class="skills">
+                        SolidWorks, 3D Printing, C++
+                    </p>
+
                     <ul>
-                        <li>Devised a method to autonomously reach any cube state using only 4 motors</li>
-                        <li>Created a full CAD in SolidWorks including custom 3D-printed parts and imported standard parts</li>
-                        <li>Created and tuned control functions to precisely rotate corners using PID control</li>
+                        <li>
+                            Devised a method to autonomously reach any cube state using only 4 motors
+                        </li>
+
+                        <li>
+                            Created a full CAD in SolidWorks including custom 3D-printed parts and imported standard parts
+                        </li>
+
+                        <li>
+                            Created and tuned control functions to precisely rotate corners using PID control
+                        </li>
                     </ul>
                 </div>
             </div>
         </a>
 
         <!-- Duosingo -->
-        <a href="projects/duosingo.html">
-            <div class="project">
-                <video autoplay loop muted playsinline>
-                    <source src="../graphics/duosingo.mp4" type="video/mp4">
-                </video>
-                <div class="projectContent">
-                    <h2 class="projectTitle">Duosingo - Language Learning App</h2>
-                    <p class="skills">Python, Git, APIs, AI</p>
-                    <ul>
-                        <li>Performed phonetic comparison using a pre-trained AI model to evaluate user performance</li>
-                        <li>Developed an autonomous translated lyric video generator using APIs</li>
-                    </ul>
-                </div>
+        <div class="project">
+            <video autoplay loop muted playsinline>
+                <source src="../graphics/duosingo.mp4" type="video/mp4">
+            </video>
+
+            <div class="projectContent">
+                <h2 class="projectTitle">
+                    Duosingo - Language Learning App
+                </h2>
+
+                <p class="skills">
+                    Python, Git, APIs, AI
+                </p>
+
+                <ul>
+                    <li>
+                        Performed phonetic comparison using a pre-trained AI model to evaluate user performance
+                    </li>
+
+                    <li>
+                        Developed an autonomous translated lyric video generator using APIs
+                    </li>
+                </ul>
             </div>
-        </a>
+        </div>
 
         <!-- Binary Counter -->
-        <a href="projects/binary_counter.html">
-            <div class="project">
-                <video autoplay loop muted playsinline>
-                    <source src="../graphics/binary_counter.mp4" type="video/mp4">
-                </video>
-                <div class="projectContent">
-                    <h2 class="projectTitle">Arduino Binary Counter</h2>
-                    <p class="skills">Arduino IDE, Breadboarding, C++</p>
-                    <ul>
-                        <li>Built a counter with up/down inputs displaying binary output on LEDs</li>
-                    </ul>
-                </div>
+        <div class="project">
+            <video autoplay loop muted playsinline>
+                <source src="../graphics/binary_counter.mp4" type="video/mp4">
+            </video>
+
+            <div class="projectContent">
+                <h2 class="projectTitle">
+                    Arduino Binary Counter
+                </h2>
+
+                <p class="skills">
+                    Arduino IDE, Breadboarding, C++
+                </p>
+
+                <ul>
+                    <li>
+                        Built a counter with up/down inputs displaying binary output on LEDs
+                    </li>
+                </ul>
             </div>
-        </a>
+        </div>
 
         <!-- Paragon -->
-        <a href="projects/paragon.html">
-            <div class="project">
-                <video autoplay loop muted playsinline>
-                    <source src="../graphics/PARAGON_Demo.mp4" type="video/mp4">
-                </video>
-                <div class="projectContent">
-                    <h2 class="projectTitle">Paragon – Python Video Game</h2>
-                    <p class="skills">Python, Git, OOP</p>
-                    <ul>
-                        <li>Developed an educational story game using Pygame</li>
-                        <li>Implemented collision systems and interactive world mechanics</li>
-                    </ul>
-                </div>
+        <div class="project">
+            <video autoplay loop muted playsinline>
+                <source src="../graphics/PARAGON_Demo.mp4" type="video/mp4">
+            </video>
+
+            <div class="projectContent">
+                <h2 class="projectTitle">
+                    Paragon – Python Video Game
+                </h2>
+
+                <p class="skills">
+                    Python, Git, OOP
+                </p>
+
+                <ul>
+                    <li>
+                        Developed an educational story game using Pygame
+                    </li>
+
+                    <li>
+                        Implemented collision systems and interactive world mechanics
+                    </li>
+                </ul>
             </div>
-        </a>
+        </div>
 
     </div>
+
 </body>
 </html>

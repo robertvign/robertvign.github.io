@@ -82,6 +82,20 @@
       line-height: 1.45;
     }
 
+    /* ---------- Inline Work Link ---------- */
+    .inlineWorkLink {
+      margin-left: 0.35rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #0f766e;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .inlineWorkLink:hover {
+      opacity: 1;
+    }
+
     /* ---------- Buttons ---------- */
     #Buttons {
       display: flex;
@@ -142,9 +156,25 @@
       opacity: 1;
     }
 
-    .slide.one   { background-image: url("graphics/scrolling/FRC.JPG"); }
-    .slide.two   { background-image: url("graphics/scrolling/skewb.png"); }
-    .slide.three { background-image: url("graphics/scrolling/Driveline.PNG"); }
+    .slide.one {
+      background-image: url("graphics/scrolling/FRC.JPG");
+    }
+
+    .slide.two {
+      background-image: url("graphics/scrolling/skewb.png");
+    }
+
+    .slide.three {
+      background-image: url("graphics/scrolling/Driveline.PNG");
+    }
+
+    .slide.four {
+      background-image: url("graphics/scrolling/real_bench.jpg");
+    }
+
+    .slide.five {
+      background-image: url("graphics/scrolling/complete_push_bar.jpg");
+    }
 
     /* ---------- Caption ---------- */
     .caption {
@@ -174,8 +204,13 @@
       z-index: 2;
     }
 
-    .arrow.left { left: 10px; }
-    .arrow.right { right: 10px; }
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
 
     /* ---------- Responsive ---------- */
     @media (max-width: 900px) {
@@ -196,10 +231,17 @@
 </head>
 
 <body>
+
   <div id="Links">
     <div id="centerButtons">
-      <a href="resume.pdf"><img src="graphics/resume.png" alt="Resume"></a>
-      <a href="https://github.com/robertvign"><img src="graphics/github.png" alt="GitHub"></a>
+      <a href="resume.pdf">
+        <img src="graphics/resume.png" alt="Resume">
+      </a>
+
+      <a href="https://github.com/robertvign">
+        <img src="graphics/github.png" alt="GitHub">
+      </a>
+
       <a href="https://www.linkedin.com/in/robert-vigneron-702592268/">
         <img src="graphics/linkedin.png" alt="LinkedIn">
       </a>
@@ -207,58 +249,96 @@
   </div>
 
   <div class="container">
+
     <div class="leftColumn">
+
       <h1 id="Name">Robert Vigneron</h1>
 
       <div id="About">
         <ul>
+
           <li>
             Mechatronics Engineering student @
             <a href="https://uwaterloo.ca/">University of Waterloo</a>
           </li>
+
           <li>
             Mechanical Engineering Co-op @
             <a href="https://uwfsae.ca/">UW Formula Electric</a>
+
+            <a class="inlineWorkLink" href="modules/formula.html">
+              [see my work]
+            </a>
           </li>
+
           <li>
             Robotics-focused, former
             <a href="https://www.syrc.ca/">FRC 8729</a> Mechanical Team Lead
           </li>
+
           <li>
             Previous Network Infrastructure Intern @
             <a href="https://www.nokia.com/">Nokia</a>
           </li>
+
         </ul>
       </div>
 
       <div id="Buttons">
+
         <button onclick="window.location.href='modules/experience.html'">
           EXPERIENCE
         </button>
+
         <button onclick="window.location.href='modules/projects.html'">
           PROJECTS
         </button>
+
       </div>
+
     </div>
 
+    <!-- ---------- Slider ---------- -->
     <div class="slider">
+
       <div class="imageContainer">
-        <div class="slide one active" data-caption="My team's FRC robot at 2025 provincials"></div>
-        <div class="slide two" data-caption="Render of my Skewb solving robot CAD"></div>
-        <div class="slide three" data-caption="UW Formula Electric driveline mock assembly"></div>
+
+        <div class="slide one active"
+          data-caption="My team's FRC robot at 2025 provincials">
+        </div>
+
+        <div class="slide two"
+          data-caption="Render of my Skewb solving robot CAD">
+        </div>
+
+        <div class="slide three"
+          data-caption="UW Formula Electric driveline mock assembly">
+        </div>
+
+        <div class="slide four"
+          data-caption="Custom Differential Test Bench">
+        </div>
+
+        <div class="slide five"
+          data-caption="FSAE Push bar/rear jack">
+        </div>
 
         <div class="arrow left" onclick="prevSlide()">‹</div>
         <div class="arrow right" onclick="nextSlide()">›</div>
+
       </div>
 
       <div class="caption" id="caption">
         My team's FRC robot at 2025 provincials
       </div>
+
     </div>
+
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+
       const slides = document.querySelectorAll(".slide");
       const caption = document.getElementById("caption");
 
@@ -268,12 +348,15 @@
 
       function showSlide(index) {
         slides.forEach(slide => slide.classList.remove("active"));
+
         slides[index].classList.add("active");
+
         caption.textContent = slides[index].dataset.caption;
       }
 
       function startAutoSlide() {
         clearTimeout(slideTimer);
+
         slideTimer = setTimeout(() => {
           nextSlide(false);
         }, intervalTime);
@@ -281,13 +364,17 @@
 
       function nextSlide(manual = true) {
         current = (current + 1) % slides.length;
+
         showSlide(current);
+
         if (manual) startAutoSlide();
       }
 
       function prevSlide(manual = true) {
         current = (current - 1 + slides.length) % slides.length;
+
         showSlide(current);
+
         if (manual) startAutoSlide();
       }
 
@@ -296,7 +383,9 @@
 
       showSlide(current);
       startAutoSlide();
+
     });
   </script>
+
 </body>
 </html>

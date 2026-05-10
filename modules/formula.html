@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UWFE</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f9f8;
+        color: #1a1a1a;
+    }
+
+    a {
+        color: #0f766e;
+        text-decoration: none;
+    }
+
+    #Links {
+        padding: 1.2rem 1.5rem;
+        background: #0F766E;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #centerButtons img {
+        width: 36px;
+        margin-right: 12px;
+        filter: brightness(0) invert(1);
+    }
+
+    #back {
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .projectHeader {
+        margin-bottom: 2rem;
+    }
+
+    .projectTitle {
+        font-size: 2.6rem;
+        color: #0f766e;
+        margin-bottom: 0.5rem;
+    }
+
+    .projectSubtitle {
+        font-size: 1.05rem;
+        color: #555;
+        max-width: 900px;
+        line-height: 1.5;
+    }
+
+    .projectSubtitle a {
+        color: #0f766e;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(15,118,110,0.4);
+    }
+
+    .section {
+        background: white;
+        border-radius: 16px;
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    }
+
+    .sectionTitle {
+        font-size: 1.25rem;
+        color: #0f766e;
+        margin-bottom: 0.6rem;
+    }
+
+    .sectionText {
+        line-height: 1.55;
+        font-size: 0.98rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    /* GRID */
+    .imageGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 0.8rem;
+    }
+
+    /* SPLIT */
+    .splitLayout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    .splitImage img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: contain;
+        max-height: 420px;
+        background: #e5f2f1;
+        cursor: pointer;
+    }
+
+    .imageCard {
+        background: #f1f5f4;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .imageCard img {
+        width: 100%;
+        height: 240px;
+        object-fit: contain;
+        background: #e5f2f1;
+        cursor: pointer;
+    }
+
+    .caption {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+        text-align: center;
+        color: #444;
+    }
+
+    /* TWO-UP ROW */
+    .sectionRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /* IMAGE MODAL */
+    #imageModal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(0,0,0,0.88);
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    #imageModal img {
+        max-width: 95%;
+        max-height: 92%;
+        border-radius: 12px;
+        background: white;
+    }
+
+    #closeModal {
+        position: absolute;
+        top: 18px;
+        right: 28px;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+        .splitLayout,
+        .sectionRow {
+            grid-template-columns: 1fr;
+        }
+
+        .projectTitle {
+            font-size: 2rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div id="Links">
+    <div id="centerButtons">
+        <a href="../resume.pdf"><img src="../graphics/resume.png"></a>
+        <a href="https://github.com/yourgithub"><img src="../graphics/github.png"></a>
+        <a href="https://linkedin.com/in/yourlinkedin"><img src="../graphics/linkedin.png"></a>
+    </div>
+
+    <div id="back" onclick="document.location='../index.html'">
+        ← back
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="projectHeader">
+
+        <div class="projectTitle">
+            University of Waterloo Formula Electric
+        </div>
+
+        <div class="projectSubtitle">
+            With UWFE, I began in my first school term as a battery/driveline member.
+            I quickly fell in love with the team and sought to spend a co-op term with the team. On my co-op,
+            I gained countless hours of experience in all aspects of the team, in design, manufacturing, and analysis phases.
+            My work earned me the position of Differential Responsible Engineer going into my second term of school this spring (2026).
+            I am so excited to continue giving the team my all and learning all I can along the way.
+            Here are some highlights of my work with the team outside of my main projects 
+            <a href="/projects.html">highlighted here</a>.
+        </div>
+
+    </div>
+
+    <!-- FIREWALL -->
+    <div class="section">
+
+        <div class="sectionTitle">
+            On the fly firewall rework
+        </div>
+
+        <div class="sectionText">
+            Reworked a 9-part aluminum firewall system for rule-compliance and great servicability.
+            Many pieces didn't fit as intended due to tolerance stackup, so had to modify them within 24 hours. 
+            This included: shortenening 3 pieces (1 pictured below), dremeling all parts to account for small errors to allow easy installation, drilling holes for dzus fasteners,
+            brainstorming method of making dzus fasteners stable despite limited lengths available (added rubber to reduce vibration and increase gap between pieces)
+        </div>
+
+        <div class="imageGrid">
+            <div class="imageCard">
+                <img src="../graphics/UWFE/firewall2.jpg">
+                <div class="caption">The main piece which I had to modify, shortened to fit</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="../graphics/UWFE/firewall1.jpeg">
+                <div class="caption">Back view of how it was strengthened/sealed</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FAN SHROUD -->
+    <div class="section">
+
+        <div class="sectionTitle">
+            Radiator Fan Shroud Mould Design
+        </div>
+
+        <div class="sectionText">
+            Used DFMA to design a mould for the carbon fibre fan shroud to make it easy to demould and post-process. Included added flanges where cuts need to be made and Indents for cutouts.    
+        </div>
+
+        <div class="imageGrid">
+
+            <div class="imageCard">
+                <img src="../graphics/UWFE/shroud_raw.png">
+                <div class="caption">Shroud immediately post-layup</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="../graphics/UWFE/shroud_assy.jpeg">
+                <div class="caption">Fan shroud assembled to radiator</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RADIATOR -->
+    <div class="section">
+
+        <div class="sectionTitle">
+            Radiator Rework
+        </div>
+
+        <div class="sectionText">
+            The radiators we buy stock have an unnecessarily bulky mounting system, and so I dremeled the old tabs off and 
+            designed 2 jigs for new tabs to be welded on, for rads from 2 different suppliers with slightly different geometry. My new tabs also made the radiator easier to assemble onto the car.
+        </div>
+
+        <div class="imageGrid">
+
+            <div class="imageCard">
+                <img src="../graphics/UWFE/rad1.jpeg">
+                <div class="caption">First rad jig to weld tabs</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="../graphics/UWFE/rad2.jpeg">
+                <div class="caption">Second rad jig to weld tabs</div>
+            </div>
+
+            <div class="imageCard">
+                <img src="../graphics/UWFE/rad_mount.jpeg">
+                <div class="caption">Mounted to the car, with tierod designed by me</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MOTOR + CONTAINER -->
+    <div class="sectionRow">
+
+        <div class="section">
+
+            <div class="sectionTitle">
+                Motor Stand
+            </div>
+
+            <div class="sectionText">
+                Motor stand which I designed and manufactured within 48 hours including custom 3d-printed brackets
+                to hold the motor-differential assembly to work on it when it's not mounted to the car. Was useful for cutting chain length, replacing the jacking bar, and having somewhere to safely store the assembly.
+            </div>
+
+            <div class="splitLayout">
+                <div class="splitText"></div>
+
+                <div class="splitImage">
+                    <img src="../graphics/UWFE/motor_stand.jpeg">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <div class="sectionTitle">
+                Container Mounts
+            </div>
+
+            <div class="sectionText">
+                Container mounts which I milled from some square stock. spent 36 hours in the machine shop over 3 days to get these done because of their odd geometry
+            </div>
+
+            <div class="splitLayout">
+                <div class="splitText"></div>
+
+                <div class="splitImage">
+                    <img src="../graphics/UWFE/container_mounts.jpeg">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal">
+
+    <span id="closeModal">&times;</span>
+
+    <img id="modalImage" src="">
+
+</div>
+
+<script>
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.getElementById("closeModal");
+
+document.querySelectorAll(".imageCard img, .splitImage img").forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+
+    });
+
+});
+
+closeBtn.addEventListener("click", () => {
+
+    modal.style.display = "none";
+
+});
+
+modal.addEventListener("click", (e) => {
+
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
